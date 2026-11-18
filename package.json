@@ -7,9 +7,11 @@
     "start": "npm start --prefix server",
     "install:all": "npm install && npm install --prefix server && npm install --prefix web",
     "seed:demo": "npm run seed:demo --prefix server --",
-    "typecheck": "npm run typecheck --prefix server && npm run typecheck --prefix web"
+    "typecheck": "npm run typecheck --prefix server && npm run typecheck --prefix web",
+    "vercel-build": "npm run build --prefix web && node scripts/vercel-build.mjs"
   },
   "devDependencies": {
-    "concurrently": "^10.0.7"
+    "concurrently": "^10.0.7",
+    "esbuild": "^0.28.2"
   }
 }
