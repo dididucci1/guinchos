@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Azul-índigo da marca */
+  --color-brand-50: #eef0fb;
+  --color-brand-100: #dfe2f8;
+  --color-brand-200: #c3c8f1;
+  --color-brand-500: #5b5fd6;
+  --color-brand-600: #3730a3;
+  --color-brand-700: #2e2887;
+  --color-brand-800: #25206d;
+  --color-brand-900: #1b1850;
+  /* Laranja de sinalização (destaques do guincho) */
+  --color-signal: #f97316;
+  --color-onbrand: #ffffff;
+  --color-page: #f4f6f8;
+  /* Gráficos (paleta validada para daltonismo nos dois temas) */
+  --color-series-1: #2a78d6;
+  --color-series-2: #eb6834;
+  --color-chart-grid: #eef1f4;
+  --color-chart-axis: #d5dbe2;
+  --color-chart-tick: #64748b;
+  --color-chart-cursor: #f1f5f9;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+/*
+ * Modo escuro: em vez de espalhar "dark:" por todos os componentes, os tons do tema
+ * são redefinidos. "white" vira a superfície dos cartões, a escala slate se inverte
+ * e os tons claros dos selos (50/100/200) viram fundos escuros tingidos.
+ */
+.dark {
+  color-scheme: dark;
+  --color-page: #0d1117;
+  --color-white: #151b23;
+
+  --color-slate-50: #1a212b;
+  --color-slate-100: #1f2731;
+  --color-slate-200: #2b3440;
+  --color-slate-300: #3b4552;
+  --color-slate-400: #6b7685;
+  --color-slate-500: #8b95a3;
+  --color-slate-600: #a8b1bd;
+  --color-slate-700: #c4cbd4;
+  --color-slate-800: #dce1e7;
+  --color-slate-900: #eef1f5;
+
+  --color-brand-50: #1a1a38;
+  --color-brand-100: #24234d;
+  --color-brand-200: #33316a;
+  --color-brand-500: #8b8ff0;
+  --color-brand-600: #5b5fd6;
+  --color-brand-700: #7b7fe8;
+  --color-brand-800: #b9bbf7;
+
+  --color-green-50: #0e2618;
+  --color-green-200: #1b4a2e;
+  --color-green-700: #4ade80;
+  --color-green-800: #86efac;
+
+  --color-amber-50: #2a2010;
+  --color-amber-100: #3d2e10;
+  --color-amber-200: #5a4214;
+  --color-amber-700: #fbbf24;
+  --color-amber-800: #fcd34d;
+
+  --color-sky-50: #0f2230;
+  --color-sky-200: #1d3f57;
+  --color-sky-800: #7dd3fc;
+
+  --color-violet-50: #221a35;
+  --color-violet-200: #3f2f66;
+  --color-violet-800: #c4b5fd;
+
+  --color-red-50: #2d1414;
+  --color-red-200: #5c2323;
+  --color-red-600: #f87171;
+  --color-red-700: #fca5a5;
+
+  --color-series-1: #3987e5;
+  --color-series-2: #d95926;
+  --color-chart-grid: #222a35;
+  --color-chart-axis: #2e3845;
+  --color-chart-tick: #8b95a3;
+  --color-chart-cursor: #1f2731;
+}
+
+html, body, #root { height: 100%; }
+body { background: var(--color-page); color: var(--color-slate-900); -webkit-font-smoothing: antialiased; }
+input, select, textarea { font-size: 16px; } /* evita zoom no iOS */
+@media (min-width: 768px) { input, select, textarea { font-size: 14px; } }
+.tabular { font-variant-numeric: tabular-nums; }
